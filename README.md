@@ -1,17 +1,7 @@
-# solidity_base_template
-Template Solidity environment based on Hardhat, Waffle, and Ethers
+# ENSO ETH Token
 
-## Install
-```
-npm install
-```
+ETH Token: [docs.enso.finance](https://docs.enso.finance/docs/smart-contracts/token/token-contract)
 
-## Compile
-```
-npx hardhat compile
-```
+## Deployment
 
-## Test
-```
-npx hardhat test
-```
+Enso: `not deployed`
