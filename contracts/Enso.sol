@@ -26,11 +26,13 @@ contract Enso is ERC20VotesComp {
     /// @notice Cap on the percentage of totalSupply that can be minted at each mint
     uint8 public mintCap = 2;
     
-    /// @notice Tracking if mintcap has been updated once
+    /// @notice Tracking if mintCap has been updated once
     bool public mintCapUpdated;
 
-    /// @notice An event thats emitted when the minter address is changed
+    /// @notice An event that's emitted when the minter address is changed
     event MinterChanged(address minter, address newMinter);
+    /// @notice An event that's emitted when the mintCap is changed
+    event MintCapUpdated(uint8 oldMintCap, uint8 newMintCap);
 
     constructor(
         string memory name_, 
@@ -75,13 +77,14 @@ contract Enso is ERC20VotesComp {
 
     /**
      * @notice Change mintCap property to immutable, can be called once
-     * @param _mintCap final minCap
+     * @param _mintCap final mintCap
      */
     function updateMintCap(uint8 _mintCap) external {
         require(msg.sender == minter, "Enso#updateMintCap: only the minter can change mintCap");
-        require(!mintCapUpdated, "Enso#updateMintCap: minCap is immutable");
+        require(!mintCapUpdated, "Enso#updateMintCap: mintCap is immutable");
 
         mintCapUpdated = true;
+        emit MintCapUpdated(mintCap, _mintCap);
         mintCap = _mintCap;
     }
 
