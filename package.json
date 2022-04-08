@@ -1,5 +1,5 @@
 {
-  "name": "@enso.contracts/erc20",
+  "name": "@ensofinance/erc20",
   "description": "Enso Erc20 token contract",
   "version": "1.0.0",
   "engines": {

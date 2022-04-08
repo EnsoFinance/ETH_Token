@@ -142,7 +142,7 @@ describe('vesting', () => {
                 });
                 it('revert when already updated', async () => {
                     await expect(token.updateMintCap(mintCap))
-                    .to.be.revertedWith('Enso#updateMintCap: minCap is immutable')
+                    .to.be.revertedWith('Enso#updateMintCap: mintCap is immutable')
                 });
             });
         })
